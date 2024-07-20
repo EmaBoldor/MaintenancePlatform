@@ -1,0 +1,40 @@
+﻿@page "/mentenante"
+@inject HttpClient Http
+
+<h3>Mentenante</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Descriere</th>
+            <th>Data</th>
+            <th>Semnatura</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mentenanta in mentenante)
+        {
+            <tr>
+                <td>@mentenanta.Id</td>
+                <td>@mentenanta.Descriere</td>
+                <td>@mentenanta.Data</td>
+                <td>@mentenanta.Semnatura</td>
+                <td>@mentenanta.Latitude</td>
+                <td>@mentenanta.Longitude</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Mentenanta> mentenante;
+
+    protected override async Task OnInitializedAsync()
+    {
+        mentenante = await Http.GetFromJsonAsync<List<Mentenanta>>("api/mentenante");
+    }
+}
+

@@ -1,0 +1,49 @@
+﻿@page "/add-mentenanta"
+
+<h3>Adaugă Fișă de Mentenanță</h3>
+
+<EditForm Model="@mentenanta" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Descriere:</label>
+        <InputText @bind-Value="mentenanta.Descriere" />
+    </div>
+    <div>
+        <label>Data:</label>
+        <InputDate @bind-Value="mentenanta.Data" />
+    </div>
+    <div>
+        <label>Semnătură:</label>
+        <canvas id="signature-pad" width="400" height="200"></canvas>
+        <button type="button" @onclick="ClearSignature">Clear</button>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</EditForm>
+
+@code {
+    private Mentenanta mentenanta = new Mentenanta();
+
+    private async Task HandleValidSubmit()
+    {
+        var signatureDataUrl = await JSRuntime.InvokeAsync<string>("signaturePadFunctions.ToDataURL");
+        mentenanta.Semnatura = signatureDataUrl;
+
+        var coordinates = await JSRuntime.InvokeAsync<Coordinates>("getCoordinates");
+        mentenanta.Latitude = coordinates.Latitude;
+        mentenanta.Longitude = coordinates.Longitude;
+
+        await Http.PostAsJsonAsync("api/mentenanta", mentenanta);
+        NavigationManager.NavigateTo("/mentenanta");
+    }
+
+    private async Task ClearSignature()
+    {
+        await JSRuntime.InvokeVoidAsync("signaturePadFunctions.Clear");
+    }
+}
+
+

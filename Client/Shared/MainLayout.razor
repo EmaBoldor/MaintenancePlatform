@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<div class="sidebar">
+    <NavMenu />
+</div>
+
+<div class="main">
+    <div class="top-row px-4">
+        <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+<style>
+    .sidebar {
+        width: 250px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 48px 0 0;
+        background-color: #f8f9fa;
+    }
+
+    .main {
+        margin-left: 250px;
+        padding: 16px;
+    }
+</style>
+

@@ -1,0 +1,8 @@
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.csproj.AssemblyReference.cache
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.AssemblyInfoInputs.cache
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.AssemblyInfo.cs
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.csproj.CoreCompileInputs.cache
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.RazorAssemblyInfo.cache
+C:\Users\intel\Desktop\Grafic Design\MaintenancePlatform\MaintenancePlatform\Server\obj\Debug\net8.0\MaintenancePlatform.Server.RazorAssemblyInfo.cs

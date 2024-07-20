@@ -1,0 +1,26 @@
+﻿@page "/mentenanta"
+
+<h3>Fișe de Mentenanță</h3>
+<button @onclick="AddNewMentenanta">Adaugă Fișă Nouă</button>
+
+<ul>
+    @foreach (var item in MentenantaList)
+    {
+        <li>@item.Descriere</li>
+    }
+</ul>
+
+@code {
+    private List<Mentenanta> MentenantaList = new List<Mentenanta>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        MentenantaList = await Http.GetFromJsonAsync<List<Mentenanta>>("api/mentenanta");
+    }
+
+    private void AddNewMentenanta()
+    {
+        NavigationManager.NavigateTo("/add-mentenanta");
+    }
+}
+
